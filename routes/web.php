@@ -24,3 +24,5 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/authors',[\App\Http\Controllers\AuthorsController::class,'getAllAuthors'])->name('authors');
+
+Route::get('/books',[\App\Http\Controllers\BooksController::class,'getAllBooks'])->name('allBooks');

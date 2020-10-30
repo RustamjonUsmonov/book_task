@@ -5,11 +5,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item {{--active--}}">
                 <a class="nav-link" href="{{route('authors')}}">{{__('Authors')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="{{route('allBooks')}}">{{__('Books')}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
