@@ -21,6 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d21a627c-1729-4ea1-b7f0-97e9f81b92b7" name="Default Changelist" comment="creating migrations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Authors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Authors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Books.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_30_101545_create_authors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_30_101545_create_authors_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +158,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jalF8FiWxxNORgOqEoGRutgwMq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -179,7 +188,9 @@
       <updated>1604049976855</updated>
       <workItem from="1604049979919" duration="19000" />
       <workItem from="1604050008362" duration="1462000" />
-      <workItem from="1604051483543" duration="2572000" />
+      <workItem from="1604051483543" duration="2772000" />
+      <workItem from="1604064501416" duration="9154000" />
+      <workItem from="1604081821042" duration="4204000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1604052728608</created>
@@ -195,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604053709582</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="creating migrations">
+      <created>1604061488047</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604061488047</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +229,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />

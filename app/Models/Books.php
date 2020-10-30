@@ -28,4 +28,8 @@ class Books extends Model
      * @var bool
      */
     public $timestamps = false;
+    public function author_book()
+    {
+        return $this->hasMany('App\Models\AutBook','book_id');
+    }
 }

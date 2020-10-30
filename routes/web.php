@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/authors',[\App\Http\Controllers\AuthorsController::class,'getAllAuthors'])->name('authors');

@@ -32,8 +32,8 @@ class Authors extends Model
     /**
      * Get the books for the author.
      */
-    public function books()
+    public function author_book()
     {
-        return $this->hasMany('App\Models\Books');
+        return $this->hasMany('App\Models\AutBook','author_id');
     }
 }
