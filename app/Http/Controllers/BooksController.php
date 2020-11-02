@@ -47,7 +47,7 @@ class BooksController extends Controller
 
     public function delete_book($id)
     {
-       $book=Books::find($id)/*->delete()*/;
+       $book=Books::find($id);
 
         if ($book != null) {
             $book->delete();

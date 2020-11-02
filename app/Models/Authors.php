@@ -13,7 +13,7 @@ class Authors extends Model
      *
      * @var array
      */
-    public  $fillable=['aname','book_id'];
+    public  $fillable=['aname'];
 
     /**
      * The table associated with the model.
