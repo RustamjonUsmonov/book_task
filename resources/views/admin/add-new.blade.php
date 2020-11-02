@@ -20,11 +20,11 @@
 
         <div class="col">
             <h3>{{__('New Book')}}</h3>
-            <form action="#" method="POST">
+            <form action="{{route('storeBook')}}" method="POST">
                 @csrf
                 <div class="form-group" >
-                    <label for="title">{{__('Book Name')}}</label>
-                    <input type="text" class="form-control" name="title" id="title">
+                    <label for="bname">{{__('Book Name')}}</label>
+                    <input type="text" class="form-control" name="bname" id="bname">
                 </div>
                 <div>
                     <button type="submit"  class="btn btn-outline-success">{{__('Save Changes')}}</button>
@@ -34,20 +34,20 @@
 
         <div class="col">
             <h3>{{__('Bind Author and Book')}}</h3>
-            <form action="{{--{{route('sub',$data->id)}}--}}" method="POST">
+            <small>Be Aware, if you will not complete this step, there will not be your new book in "Books"</small>
+            <form action="{{route('store')}}" method="POST">
                 @csrf
-
                 <div class="form-group" >
-                    <label for="autList">{{__('Choose Author')}}</label>
-                    <select class="form-control " name="autList" id="autList">
+                    <label for="author_id">{{__('Choose Author')}}</label>
+                    <select class="form-control " name="author_id" id="author_id">
                         @foreach($authors as $key => $data)
                             <option value="{{$data->id}}">{{$data->aname}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group" >
-                    <label for="autList">{{__('Choose Book')}}</label>
-                    <select class="form-control " name="autList" id="autList">
+                    <label for="book_id">{{__('Choose Book')}}</label>
+                    <select class="form-control " name="book_id" id="book_id">
                         @foreach($books as $key => $data)
                             <option value="{{$data->id}}">{{$data->bname}}</option>
                         @endforeach

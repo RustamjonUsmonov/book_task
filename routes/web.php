@@ -30,6 +30,10 @@ Route::get('/books/edit/{id}',[\App\Http\Controllers\BooksController::class,'edi
 
 Route::post('/books/submit/{id}',[\App\Http\Controllers\BooksController::class,'submit'])->name('sub');
 
+Route::post('/store-book',[\App\Http\Controllers\BooksController::class,'storeBook'])->name('storeBook');
+
 Route::get('/books/delete/{id}',[\App\Http\Controllers\BooksController::class,'delete_book'])->name('del');
 
 Route::get('/books/add-new',[\App\Http\Controllers\AutBooksController::class,'addNew'])->name('add');
+
+Route::post('/store',[\App\Http\Controllers\AutBooksController::class,'store'])->name('store');
