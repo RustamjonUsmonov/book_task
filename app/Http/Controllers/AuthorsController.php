@@ -23,4 +23,12 @@ class AuthorsController extends Controller
         $authors = DB::table('authors')->get();
         return view('authors', ['authors' => $authors,'book_counts'=>$general]);
     }
+    public function storeAut(Request $request)
+    {
+        $validatedData = $request->validate([
+            'aname' => 'required|max:255',
+        ]);
+        Authors::create($request->all());
+        return redirect()->route('add')->with('message', 'Author Created');
+    }
 }

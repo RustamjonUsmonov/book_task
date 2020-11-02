@@ -28,4 +28,30 @@ class BooksController extends Controller
         $boo = DB::table('books')->get();
         return view('books', ['books' => $boo,'anames'=>$general]);
     }
+
+    public function edit_book($id)
+    {
+        return view('admin.editBook',['data'=>Books::find($id)]);
+    }
+
+
+    public function delete_book($id)
+    {
+       $book=Books::find($id)/*->delete()*/;
+
+        if ($book != null) {
+            $book->delete();
+            return redirect()-> route('allBooks')->with(['message'=> 'Successfully deleted!!']);
+        }
+
+        return redirect()->route('allBooks')->with(['message'=> 'Wrong ID!!']);
+    }
+
+    public function submit(Request $request,$id)
+    {
+        $book=Books::find($id);
+        $book->bname = $request->input('bname');
+        $book->save();
+       return redirect()-> route('allBooks')/*->with('info','Profile got saved')*/;
+    }
 }
