@@ -16,9 +16,6 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 /**
  * AuthorController
 */
@@ -48,6 +45,10 @@ Route::get('/books/delete/{id}',[\App\Http\Controllers\BooksController::class,'d
 /**
  * AutBooksController
  */
+
+Route::get('/',[\App\Http\Controllers\AutBooksController::class,'getAllData'])->name('home');
+
 Route::get('/books/add-new',[\App\Http\Controllers\AutBooksController::class,'addNew'])->name('add');
 
 Route::post('/store',[\App\Http\Controllers\AutBooksController::class,'store'])->name('store');
+

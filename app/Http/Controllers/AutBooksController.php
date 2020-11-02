@@ -38,6 +38,32 @@ class AutBooksController extends Controller
         ]);
         AutBook::create($request->all());
         return redirect()->route('add')->with('message', 'Success');
+    }
 
+    public function getAllData()
+    {
+        $ids= AutBook::pluck('book_id');
+        $books = Books::pluck('id');
+        foreach($ids as $id){
+            $arr[]=$id;
+        }
+        foreach($books as $book){
+            $arr2[]=$book;
+        }
+        $contains=array_intersect($arr,$arr2);
+        $names=[];
+        $keys=[];
+        foreach($contains as $book){
+            //getting author_id via book_id in table author_book
+            $author_id = DB::table('author_book')->select('author_id')->where('book_id', $book)->first();
+            //getting author name using author_id
+            $author = DB::table('authors')->select('aname')->where('id', $author_id->author_id)->first();
+            array_push($keys,$book);
+            array_push($names,$author->aname);
+            $boo[] = DB::table('books')->find($book);
+        }
+        $general=array_combine($keys,$names);//dictionary with keys=book_id, and values=authors
+
+        return view('home', ['books' => $boo,'anames'=>$general]);
     }
 }
