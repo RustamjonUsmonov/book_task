@@ -19,11 +19,22 @@ Route::get('/welcome', function () {
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
+/**
+ * AuthorController
+*/
 Route::get('/authors',[\App\Http\Controllers\AuthorsController::class,'getAllAuthors'])->name('authors');
 
 Route::post('/store-author',[\App\Http\Controllers\AuthorsController::class,'storeAut'])->name('storeAut');
 
+Route::get('/authors/edit/{id}',[\App\Http\Controllers\AuthorsController::class,'editAuthor'])->name('editAuthor');
+
+Route::post('/authors/submit/{id}',[\App\Http\Controllers\AuthorsController::class,'subAuthor'])->name('subAuthor');
+
+Route::get('/authors/delete/{id}',[\App\Http\Controllers\AuthorsController::class,'deleteAuthor'])->name('deleteAuthor');
+
+/**
+ * BooksController
+ */
 Route::get('/books',[\App\Http\Controllers\BooksController::class,'getAllBooks'])->name('allBooks');
 
 Route::get('/books/edit/{id}',[\App\Http\Controllers\BooksController::class,'edit_book'])->name('edit');
@@ -34,6 +45,9 @@ Route::post('/store-book',[\App\Http\Controllers\BooksController::class,'storeBo
 
 Route::get('/books/delete/{id}',[\App\Http\Controllers\BooksController::class,'delete_book'])->name('del');
 
+/**
+ * AutBooksController
+ */
 Route::get('/books/add-new',[\App\Http\Controllers\AutBooksController::class,'addNew'])->name('add');
 
 Route::post('/store',[\App\Http\Controllers\AutBooksController::class,'store'])->name('store');

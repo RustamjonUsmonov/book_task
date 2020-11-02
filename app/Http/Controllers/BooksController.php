@@ -59,6 +59,9 @@ class BooksController extends Controller
 
     public function submit(Request $request,$id)
     {
+        $validatedData = $request->validate([
+            'bname' => 'required|max:255',
+        ]);
         $book=Books::find($id);
         $book->bname = $request->input('bname');
         $book->save();

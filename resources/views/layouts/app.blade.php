@@ -9,6 +9,6 @@
 <div class="container mt-3" data-toggle="tab">
     @yield('content')
 </div>
-
+@include('blocks.footer')
 </body>
 </html>

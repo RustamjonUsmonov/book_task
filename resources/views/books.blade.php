@@ -26,4 +26,7 @@
         @endforeach
         </tbody>
     </table>
+    <div class="ml-4 text-right text-sm text-gray-500 sm:text-right sm:ml-0">
+        <u>Total Count: {{count($books)}}</u>
+    </div>
 @endsection
