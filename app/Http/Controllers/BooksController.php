@@ -14,14 +14,8 @@ class BooksController extends Controller
      */
     public function getAllBooks()
     {
-       $ids= AutBook::pluck('book_id');
-        $books = Books::pluck('id');
-        foreach($ids as $id){
-            $arr[]=$id;
-        }
-        foreach($books as $book){
-            $arr2[]=$book;
-        }
+        $arr=AutBook::pluck('book_id')->toArray();
+        $arr2= Books::pluck('id')->toArray();
         $contains=array_intersect($arr,$arr2);
         $names=[];
         $keys=[];
@@ -47,7 +41,7 @@ class BooksController extends Controller
 
     public function delete_book($id)
     {
-       $book=Books::find($id);
+        $book=Books::find($id);
 
         if ($book != null) {
             $book->delete();
@@ -65,7 +59,7 @@ class BooksController extends Controller
         $book=Books::find($id);
         $book->bname = $request->input('bname');
         $book->save();
-       return redirect()-> route('allBooks')/*->with('info','Profile got saved')*/;
+        return redirect()-> route('allBooks')/*->with('info','Profile got saved')*/;
     }
 
     public function storeBook(Request $request)

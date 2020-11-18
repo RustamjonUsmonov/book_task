@@ -42,15 +42,9 @@ class AutBooksController extends Controller
 
     public function getAllData()
     {
-        $ids= AutBook::pluck('book_id');
-        $books = Books::pluck('id');
-        foreach($ids as $id){
-            $arr[]=$id;
-        }
-        foreach($books as $book){
-            $arr2[]=$book;
-        }
-        $contains=array_intersect($arr,$arr2);
+        $ids= AutBook::pluck('book_id')->toArray();
+        $books = Books::pluck('id')->toArray();
+        $contains=array_intersect($ids,$books );
         $names=[];
         $keys=[];
         foreach($contains as $book){

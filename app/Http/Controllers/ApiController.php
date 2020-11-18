@@ -11,15 +11,9 @@ class ApiController extends Controller
 {
     public function getBooks()
     {
-        $ids= AutBook::pluck('book_id');
-        $books = Books::pluck('id');
-        foreach($ids as $id){
-            $arr[]=$id;
-        }
-        foreach($books as $book){
-            $arr2[]=$book;
-        }
-        $contains=array_intersect($arr,$arr2);
+        $ids= AutBook::pluck('book_id')->toArray();
+        $books = Books::pluck('id')->toArray();
+        $contains=array_intersect($ids,$books);
         $names=[];
         $keys=[];
         foreach($contains as $book){
@@ -61,8 +55,7 @@ class ApiController extends Controller
 
     public function deleteBook($id)
     {
-        $book = Books::where('id', $id)
-            ->delete();
+        $book = Books::where('id', $id)->delete();
         return response()->json(['Book'=>'Deleted'],200);
     }
 }

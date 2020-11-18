@@ -69,6 +69,11 @@ class AuthorsController extends Controller
         return redirect()-> route('authors')/*->with('info','Profile got saved')*/;
     }
 
+    /**
+     * Deleting Author via id.
+     * @param $id
+     * @return RedirectResponse
+     */
     public function deleteAuthor($id)
     {
         $aut=Authors::find($id);
